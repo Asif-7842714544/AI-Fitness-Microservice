@@ -1,0 +1,35 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        #        userService Routes
+        - id: USERSERVICE
+          uri: lb://USERSERVICE
+          predicates:
+            - Path=/api/users/**
+        #            activeService Routes
+        - id: ACTIVITYSERVICE
+          uri: lb://ACTIVITYSERVICE
+          predicates:
+            - Path=/api/activities/**
+        #            activeService Routes
+        - id: AISERVICE
+          uri: lb://AISERVICE
+          predicates:
+            - Path=/api/recommendations/**
+
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: localhost
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+
+
+server:
+  port: 8080

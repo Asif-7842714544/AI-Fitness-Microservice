@@ -9,8 +9,10 @@
         <outputRelativeToContentRoot value="true" />
         <module name="eurekaService" />
         <module name="aiService" />
+        <module name="apigateway" />
+        <module name="configserver" />
       </profile>
-      <profile name="Annotation profile for userservice" enabled="true">
+      <profile name="Annotation profile for activityService" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -26,6 +28,8 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="activityService" options="-parameters" />
       <module name="aiService" options="-parameters" />
+      <module name="apigateway" options="-parameters" />
+      <module name="configserver" options="-parameters" />
       <module name="eurekaService" options="-parameters" />
       <module name="userservice" options="-parameters" />
     </option>
